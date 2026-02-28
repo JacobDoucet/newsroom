@@ -653,7 +653,7 @@ func (h *Handler) PublishCandidate(w http.ResponseWriter, r *http.Request) {
 
 // GetLatestArticles returns published articles
 func (h *Handler) GetLatestArticles(w http.ResponseWriter, r *http.Request) {
-	region := r.URL.Query().Get("region")
+	_ = r.URL.Query().Get("region") // region filtering not yet implemented
 	limit := 20
 
 	query := `
